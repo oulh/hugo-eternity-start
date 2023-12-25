@@ -1,0 +1,82 @@
+baseURL:  # 本站网址，可设可不设
+title: 壹个相簿 # 网站标题，留空则不显示
+defaultContentLanguage: 'zh'
+theme: eternity
+googleAnalytics: '' # 谷歌搜索引擎 set your analytics id.
+
+params:
+  image: /images/banner.png
+  logo: logo.png # 网站logo，位于static/目录，可替换
+  subtitle: 网站副标题 # change default subtitle for your website.
+  copyright: All rights reserved. # 页脚版权说明，可自定义内容
+  author: 作者 # 页脚版权作者，可自定义
+  dontShowSource: false # 是否显示页脚主题出处 please, do not do this :)
+  portfolio:
+    # 图片显示列数，不设置则使用default值
+    columns:
+      desktop:
+        default: 3
+        风景: 4
+        动物: 2
+        全部: 5
+      mobile:
+        default: 2
+        生活: 1
+        全部: 3
+  socials:
+    # 自定义社交链接
+    # 图标参考：https://fontawesome.com/search?q=weixin&o=r
+    - icon: 'far fa-envelope fa-lg'
+      url: 'mailto:olh1289@outlook.com'
+      landing: true
+    - icon: 'fab fa-github fa-lg'
+      url: 'https://github.com/oulh/hugo-eternity-build'
+      landing: true
+    - icon: 'fa-brands fa-bilibili fa-bounce fa-lg'
+      url: 'https://space.bilibili.com/456664753/'
+    - icon: 'fa-brands fa-tiktok fa-beat fa-sm'
+      url: 'https://www.douyin.com/user/MS4wLjABAAAAgq8cb7cn9ByhZbmx-XQDdRTvFzmJeBBXOUO4QflP96M'
+  homepage: "/work" # homepage link, mostly same with menu.main[0]
+  specialPages:
+    - work
+    - 全部
+  bypassWelcomePage: false # 是否关闭欢迎页面，true关闭,false不关闭
+  disableWelcomePageBackground: false # 是否禁止欢迎页面背景图，true禁止，false不禁止
+  plausible: '' # todo: set your plausible id.
+  disableRadius: false
+  moveIt: false  # Moves Title and Meta info down, only visible when scroll.
+  disableAlwaysResize: false
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  #work: ":year:/:month/:filename/"
+  work: ":filename/"
+menu:
+  # 可自定义，与content/work/目录下的文件夹名一致就行
+  main:
+    - name: 首页
+      url: /work/
+      weight: 1
+    - name: 动物
+      url: /tags/动物/
+      weight: 4
+    - name: 风景
+      url: /tags/风景/
+      weight: 2
+    - name: 生活
+      url: /tags/生活/
+      weight: 3
+    - name: 全部
+      url: /tags/全部/
+      weight: 5
+    - name: 关于
+      url: /about/
+      weight: 6

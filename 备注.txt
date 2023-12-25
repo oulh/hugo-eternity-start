@@ -1,0 +1,58 @@
+一、本站点说明
+
+
+1.hugo-eternity主题：https://github.com/boratanrikulu/eternity
+
+  本站点未修改过主题本体，升级直接更换themes/目录下的主题目录即可。
+
+2.deploy.sh （暂没用过）是eternity主题作者写的一键部署脚本，可自动上传 public/ 内容到gh-pages分支。
+
+
+二、Hugo说明（通用） 
+
+1.建站过程
+
+(1) hugo新建初始化站点,命令: hugo new site <网站目录> 
+
+    结果：生成hugo目录结构，除了archetypes/default.md，其他目录都是空的
+
+(2) 拷贝主题目录到themes/
+
+(3) 配置文件config.yaml(.toml)或 hugo.yaml(.toml)，文章目录 content/
+
+    这步直接拷贝主题示例站点的文件进行修改。
+
+2.目录和文件说明
+
+assets/ content/ static/ layouts/ themes/ archetypes/ resources/ 目录和 .gitignore、config.yaml 文件。
+
+文章内容相关：（主题配置好后只需要关注这两个目录）
+
+assets/: 多媒体文件（文章附带图片、音视频等）
+
+content/: 文章和页面（不同主题，结构不同）
+
+主题和样式相关
+
+themes/ ：存放主题。不必使用git submodule的方式下载主题，干脆直接拷贝主题目录到themes/，因为个别平台自动构建时不会自动下载submodule形式的目录。
+
+static/ layouts/ ：是自定义样式和内容的目录，可以不对主题本体进行修改，从而修改样式。看主题支持情况。
+
+config.yaml ：站点+主题配置文件。一般情况下主题会提供一个站点示例文件，如/themes/eternity/example/eternity.bora.sh/config.yaml，使用它要先删掉hugo默认的hugo.toml
+
+其他：
+
+archetypes/ 一些初始化文件，hugo自动生成。
+
+public/ 是"hugo"本地构建输出的网站文件，不需要同步到github。
+
+.gitignore ：可设置github同步时需忽略的文件和目录。
+
+无用的：
+
+resources/ ："hugo serve"调试产生的资源文件，不需要同步到github;
+
+.hugo_build.lock
+
+
+

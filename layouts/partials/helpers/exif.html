@@ -1,0 +1,17 @@
+<div class="exif">
+    <details> 
+        <summary>Exif</summary>
+        <ul>
+            {{ with .Date }}<li>日期 Date: {{ .Format "2006年1月2日" }}</li>{{ end }}
+            {{ with .Tags.Copyright }}<li>版权 Copyright: {{ . }}</li>{{ end }}
+            {{ with .Tags.ApertureValue }}<li>光圈 Aperture: {{ lang.NumFmt 2 . }}</li>{{ end }}
+            {{ with .Tags.BrightnessValue }}<li>亮度 Brightness: {{ . }}</li>{{ end }}
+            {{ with .Tags.ExposureTime }}<li>曝光时间 Exposure Time: {{ . }}</li>{{ end }}
+            {{ with .Tags.FNumber }}<li>F数 F Number: {{ . }}</li>{{ end }}
+            {{ with .Tags.FocalLength }}<li>焦距 Focal Length: {{ . }}</li>{{ end }}
+            {{ with .Tags.ISOSpeedRatings }}<li>ISO感光度 ISO Speed Ratings: {{ . }}</li>{{ end }}
+            {{ with .Tags.Model }}<li>相机型号 Model: {{ . }}</li>{{ end }}
+            {{ with .Tags.LensModel }}<li>镜头型号 Lens Model: {{ . }}</li>{{ end }}
+        </ul>
+    </details>
+</div>
