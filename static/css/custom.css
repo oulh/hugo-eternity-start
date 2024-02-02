@@ -4,8 +4,8 @@
 .source-love {
     color: #ff8099;
 }
-
-.enter>.button {
+/* 欢迎页面的方框按钮 */
+.enter .button {
     margin-bottom: 20px;
     height: 50px;
     width: 170px;
@@ -13,3 +13,69 @@
     font-size: 1.3em;
     font-family: custom;
 }
+/* 非手机端的“上一页”“下一页”按钮 */
+@media(min-width: 768px){
+.navigate{
+    background-color:unset;
+}
+.prev {
+    left: 10px;
+    border-radius: 3px 0 0 3px;
+}
+.next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+.prev, .next {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    width: auto;
+    margin: 16px;
+    margin-top: -50px;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+} 
+.navigate a:hover, a:active{
+    color: var(--grey);
+    border-bottom: none;
+}
+}
+
+/* “关闭页面”按钮 */
+.modal-close {
+    max-height: 30px;
+    max-width: 30px;
+}
+/* 一个页面含多张图片时，手机端优先竖向排列 */
+@media screen and (max-width: 766px){
+.slide-imgs .columns {
+    flex-direction:column;
+}
+}
+/* 一个页面含多张图片时（横向排列），图片的宽高 */
+.slide-imgs .column {
+    flex-basis: 0;/* auto:保持高度一致，0:宽度均分 */
+}
+/* 正文url链接样式 */
+.slide-info .content a {  
+    border-bottom: 1px solid var(--white);
+} 
+.slide-info .content a:hover, a.active{
+     border-bottom: 3px solid var(--main);
+}
+
+/* 正文iframe内嵌视频高度 */
+@media (min-width: 500px) and (max-width: 766px){
+.content iframe {
+    height:300px;
+}}
+@media (min-width: 767px){
+.content iframe {
+    height:540px;
+}}

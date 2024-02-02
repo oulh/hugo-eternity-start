@@ -1,9 +1,13 @@
  :root {
-
+    /* 加粗字体颜色 */
     --main: #2069cf;
-    --main-light: #465DFF;
+    /* x、<、>按钮 */
+    --main-light:white;
+    /* 背景颜色 */
     --dark: #000;
     --dark-light: #101010;
+    /* 正文颜色 */
     --white: #eee;
+    /* v按钮 */
     --grey: rgb(169, 169, 169);
 }
